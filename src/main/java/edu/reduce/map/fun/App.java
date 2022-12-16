@@ -1,11 +1,11 @@
 package edu.reduce.map.fun;
 
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.conf.*;
-import org.apache.hadoop.io.*;
-import org.apache.hadoop.mapreduce.*;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class App {
     public static void main(final String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+        org.apache.log4j.BasicConfigurator.configure();
         final Job job = configureJob("funWithMapReduce");
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
@@ -21,13 +22,14 @@ public class App {
 
     private static Job configureJob(final String jobName) throws IOException {
         Job job = Job.getInstance(new Configuration(), jobName);
+        job.setInputFormatClass(ChessFileInputFormat.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
-        job.setMapperClass(Map.class);
-        job.setReducerClass(Reduce.class);
-        job.setInputFormatClass(TextInputFormat.class);
+        job.setMapperClass(DavidOrGoliathMapper.class);
+        job.setCombinerClass(Count.class);
+        job.setReducerClass(Count.class);
         job.setOutputFormatClass(TextOutputFormat.class);
-        job.setJarByClass(Map.class);
+        job.setJarByClass(DavidOrGoliathMapper.class);
         return job;
     }
 }

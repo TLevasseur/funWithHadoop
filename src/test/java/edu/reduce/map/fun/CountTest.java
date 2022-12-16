@@ -18,6 +18,10 @@ public class CountTest {
         assertEquals(15, countHelper(asList(i3, i5, i7)));
     }
 
+    /**
+     * Property Based Testing :
+     * Having both associativity and commutativity enables us to also use the reducer as a combiner.
+     */
     @Test
     public void should_be_associative() {
         assertEquals(

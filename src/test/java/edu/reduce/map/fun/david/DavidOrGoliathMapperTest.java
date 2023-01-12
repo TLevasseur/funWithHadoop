@@ -1,10 +1,11 @@
-package edu.reduce.map.fun;
+package edu.reduce.map.fun.david;
 
+import edu.reduce.map.fun.GameWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.junit.Test;
 
-import static edu.reduce.map.fun.DavidOrGoliathMapper.goliathWon;
+import static edu.reduce.map.fun.david.DavidOrGoliathMapper.goliathWon;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

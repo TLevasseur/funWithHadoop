@@ -115,4 +115,8 @@ public class GameWritable implements Writable {
     public Text getGameId() {
         return id;
     }
+
+    public Text getOpening() {
+        return opening_name;
+    }
 }

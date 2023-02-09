@@ -1,6 +1,9 @@
 package edu.reduce.map.fun;
 
-import org.apache.hadoop.io.*;
+import org.apache.hadoop.io.BooleanWritable;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.Writable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -41,6 +44,26 @@ public class GameWritable implements Writable {
 
     public Text getWinner() {
         return winner;
+    }
+
+    public BooleanWritable getRated() {
+        return rated;
+    }
+
+    public IntWritable getTurns() {
+        return turns;
+    }
+
+    public Text getId() {
+        return id;
+    }
+
+    public Text getVictory_status() {
+        return victory_status;
+    }
+
+    public Text getAllMoves() {
+        return allMoves;
     }
 
     public GameWritable(Text id, BooleanWritable rated, IntWritable turns, Text victory_status, Text winner, Text increment_code, Text white_id, IntWritable white_rating, Text black_id, IntWritable black_rating, Text AllMoves, Text opening_eco, Text opening_name, IntWritable opening_ply) {
@@ -118,5 +141,17 @@ public class GameWritable implements Writable {
 
     public Text getOpening() {
         return opening_name;
+    }
+
+    public Text getIncrement_code() {
+        return increment_code;
+    }
+
+    public IntWritable getOpening_ply() {
+        return opening_ply;
+    }
+
+    public Text getOpening_eco() {
+        return opening_eco;
     }
 }

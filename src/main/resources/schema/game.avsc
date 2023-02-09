@@ -1,0 +1,70 @@
+{
+  "type": "record",
+  "name": "Game",
+  "namespace": "edu.reduce.map.fun",
+  "fields": [{
+    "name": "black_id",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "black_rating",
+    "type": ["null", "int"],
+    "default": null
+  }, {
+    "name": "created_at",
+    "type": ["null", "long"],
+    "default": null
+  }, {
+    "name": "id",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "increment_code",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "last_move_at",
+    "type": ["null", "long"],
+    "default": null
+  }, {
+    "name": "moves",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "opening_eco",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "opening_name",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "opening_ply",
+    "type": ["null", "int"],
+    "default": null
+  }, {
+    "name": "rated",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "turns",
+    "type": ["null", "int"],
+    "default": null
+  }, {
+    "name": "victory_status",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "white_id",
+    "type": ["null", "string"],
+    "default": null
+  }, {
+    "name": "white_rating",
+    "type": ["null", "int"],
+    "default": null
+  }, {
+    "name": "winner",
+    "type": ["null", "string"],
+    "default": null
+  }]
+}
